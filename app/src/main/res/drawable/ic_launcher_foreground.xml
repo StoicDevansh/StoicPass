@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Centered within 66dp safe zone: using viewport 108, size 66 is ~61%. -->
+    <path
+        android:fillColor="#E0E0E0"
+        android:pathData="M54,23 L28.3,34.4 v15.5c0,16.8 11.1,32.3 25.7,36.1 14.6,-3.9 25.7,-19.3 25.7,-36.1V34.4L54,23zM54,67.8c-3.1,0 -5.6,-2.5 -5.6,-5.6s2.5,-5.6 5.6,-5.6 5.6,2.5 5.6,5.6 -2.5,5.6 -5.6,5.6z" />
+</vector>
