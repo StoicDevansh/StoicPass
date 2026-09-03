@@ -5,7 +5,7 @@
 
 # StoicPass
 
-A simple and modern password manager. Free forever, open-source.
+Welcome to **StoicPass**, a minimal, secure, and modern password manager designed for your Android device. It stores your passwords entirely offline on your device, ensuring maximum privacy and security.
 
 ## Installation Guide (Windows)
 
@@ -86,6 +86,4 @@ gradlew installDebug
 
 See LICENSE file for details.
 
-## Support
 
-Questions? Check [issues](https://github.com/StoicDevansh/StoicPass/issues)

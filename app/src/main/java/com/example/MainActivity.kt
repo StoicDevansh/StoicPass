@@ -1,22 +1,23 @@
 package com.example
 
 import android.os.Bundle
-import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
+import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.room.Room
 import com.example.data.AppDatabase
+import com.example.data.AuthManager
 import com.example.data.PasswordRepository
 import com.example.ui.AppNavigation
 import com.example.ui.PasswordViewModel
 import com.example.ui.PasswordViewModelFactory
 import com.example.ui.theme.MyApplicationTheme
 
-class MainActivity : ComponentActivity() {
+class MainActivity : FragmentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -26,6 +27,7 @@ class MainActivity : ComponentActivity() {
             AppDatabase::class.java, "stoicpass-db"
         ).build()
         val repository = PasswordRepository(db.passwordDao())
+        val authManager = AuthManager(applicationContext)
         
         setContent {
             MyApplicationTheme {
@@ -33,7 +35,7 @@ class MainActivity : ComponentActivity() {
                     val viewModel: PasswordViewModel = viewModel(
                         factory = PasswordViewModelFactory(repository)
                     )
-                    AppNavigation(viewModel = viewModel)
+                    AppNavigation(viewModel = viewModel, authManager = authManager)
                 }
             }
         }
